@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
 const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 const PORT = 5000;
@@ -34,7 +35,7 @@ app.post("/api/factory", async (req, res) => {
       },
       {
         headers: {
-          Authorization: `Bearer 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`,
+          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
           "Content-Type": "application/json",
         },
       }
